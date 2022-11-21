@@ -1,0 +1,12 @@
+<h1>Agregar miembro</h1>
+
+    <form action="agregar_registro/" method="post">
+        {% csrf_token %}
+        Nombre:<br>
+            <input name="primo">
+            <br><br>
+        Apellido:<br>
+            <input name="last">  <!--estos nombres se cargan en la lógica de la función view (x = request.POST['last'])-->
+            <br><br>
+        <input type="submit" value="Enviar">
+    </form>
