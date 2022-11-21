@@ -1,0 +1,24 @@
+<body  style="background-color: lightgreen ">
+    <h1 style 'font-size: 150px'>{% now "Y-m-d" %}</h1>
+    <h1>Hello {{ nombre }}, how are you?</h1>
+    <ul>
+        {% for x in mymembers %}
+        {% filter upper %}
+          <li style='color:{% cycle 'red' 'green' 'blue'  %}'>Aló {{ x.nombre }}</li>
+        {% endfilter %}
+        {% endfor %}
+    </ul>
+    {% autoescape on %}
+        <h1>{{ heading }}</h1>
+    {% endautoescape %}
+    {% autoescape off %}
+        <h1>{{ footing }}</h1>
+    {% endautoescape %}  
+    {% lorem 10 w %}
+
+    {% verbatim %}
+        {% for x in lista %}
+            <h1>{{ x.apellido }}</h1>
+        {% endfor %}
+    {% endverbatim %}
+</body>

@@ -33,9 +33,49 @@ def delete(request, id):
   return HttpResponseRedirect(reverse('index'))
 
 def update(request, id):
-    mymembers = Members.objects.get(id = id)
-    template = loader.get_template('update.html')
-    context = {
+  mymember = Members.objects.get(id=id)
+  template = loader.get_template('update.html')
+  context = {
+    'mymember': mymember,
+  }
+  return HttpResponse(template.render(context, request))
+
+def updaterecord(request, id):
+  first = request.POST['first']
+  doppo = request.POST['doppo']
+  member = Members.objects.get(id=id)
+  member.nombre = first
+  member.apellido = doppo
+  member.save()
+  return HttpResponseRedirect(reverse('index'))
+
+def saludar(request):
+  template = loader.get_template('saludar.html')
+  context = {
+    'nombre': 'Rosana',
+  }
+  return HttpResponse(template.render(context, request))
+
+def saludando(request):
+  mymembers = Members.objects.all().values()
+  template = loader.get_template('saludar.html')
+  context = {
     'mymembers': mymembers,
   }
-    return HttpResponseRedirect(context,reverse('index'))
+  return HttpResponse(template.render(context, request))  
+
+def autoescape(request):
+  template = loader.get_template('saludar.html')
+  context = {
+    'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+    'footing': 'Hello &lt;i&gt;my&lt;/i&gt; World!'
+  }
+  return HttpResponse(template.render(context, request))
+
+def verbatim(request):
+  lista = Members.objects.all().values()
+  template = loader.get_template('saludar.html')
+  context = {
+    'lista': lista,
+  }
+  return HttpResponse(template.render(context, request))  

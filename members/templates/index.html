@@ -18,9 +18,12 @@
     <td>{{ x.apellido }}</td>
     <td><a href="delete/{{ x.id }}">eliminar</a></td>
     </tr>
-    {% endfor %}
+    {% endfor %} <!--realizar lógica de programación en templates, como ejecutar sentencias and loops. if for se llaman 
+        "etiquetas de plantilla" en Django. Para ejecutar las etiquetas, las rodeamos entre { 1 % 1 % 1}.-->
     </table>
     <p><a href="add/">Agregar</a></p>
-
-</body>
-</html>
+    <p><a href="saludar/">Saludar</a></p>
+    <p><a href="saludar/saludando/">Saludar a todos</a></p>
+    <p><a href="saludar/autoescape/">autoescapar</a></p>
+    <p><a href="saludar/verbatim/">qué pasa con la verba?</a></p>
+  </html>
