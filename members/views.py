@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from .models import Members
+from .models import Members, Frutas
 
 
 
@@ -79,3 +79,33 @@ def verbatim(request):
     'lista': lista,
   }
   return HttpResponse(template.render(context, request))  
+
+# def frutas(request):
+#   template = loader.get_template('saludar.html')
+#   context = {
+#     'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+#     }
+#   return HttpResponse(template.render(context, request))  
+
+def frutas(request):
+  fruta = Frutas.objects.all().values()
+  template = loader.get_template('frutas.html')
+  context = {
+    'fruta':fruta,
+  }
+  return HttpResponse(template.render(context, request))
+
+def suma_fruta(request):
+  template = loader.get_template('suma_fruta.html')
+  return HttpResponse(template.render({}, request))
+
+def agregar_fruta(request):
+  x = request.POST['fruta']  
+  fruta = Frutas(fruta=x)
+  fruta.save()
+  return HttpResponseRedirect(reverse('frutas')) #este reverse hace ref a la FUNCION Y NO AL HTML
+
+def sacar(request, id):
+  fruta = Frutas.objects.get(id=id)
+  fruta.delete()
+  return HttpResponseRedirect(reverse('frutas'))

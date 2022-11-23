@@ -1,0 +1,8 @@
+<h1>Agregar fruta</h1>
+
+<form action="agregar_fruta/" method="post">
+  {% csrf_token %} Fruta:<br />
+  <input name="fruta" />
+  <br /><br />
+  <input type="submit" value="Mandá fruta" />
+</form>

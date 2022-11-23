@@ -12,5 +12,9 @@ urlpatterns = [
     path('saludar/saludando/', views.saludando, name = 'saludando'),
     path('saludar/autoescape/', views.autoescape, name = 'autoescapar'),
     path('saludar/verbatim/', views.verbatim, name = 'verbatim'),
+    path('frutas/', views.frutas, name = 'frutas'),
+    path('frutas/sacar/<int:id>', views.sacar, name='sacar'),
+    path('frutas/suma_fruta/', views.suma_fruta, name = 'suma_fruta'),
+    path('frutas/suma_fruta/agregar_fruta/', views.agregar_fruta, name = 'agregar_fruta'),   
    ]
    

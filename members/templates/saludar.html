@@ -21,4 +21,10 @@
             <h1>{{ x.apellido }}</h1>
         {% endfor %}
     {% endverbatim %}
+
+{% with variable=fruits|length %}
+  {% for x in fruits %}
+     <p style='color:{% cycle 'red' 'green' 'blue'  %}'>{% filter linenumbers %} {{ x }} is one of {{ variable }} fruits.{% endfilter %}</p>
+  {% endfor %}
+{% endwith %}
 </body>
