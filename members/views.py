@@ -109,3 +109,6 @@ def sacar(request, id):
   fruta = Frutas.objects.get(id=id)
   fruta.delete()
   return HttpResponseRedirect(reverse('frutas'))
+
+
+  
