@@ -5,23 +5,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'myfirst.css' %}" />
+    <link rel="stylesheet" href="{% static '/members/css/myfirst.css' %}" />
     <title>Frutas</title>
   </head>
-  <body style="background-color: rgb(117, 117, 166)">
+  <body>
+
     <h1>Ricas Frutas</h1>
 
-    <table border="2" style="background-color: burlywood">
-      {% for x in fruta %}
-      <tr>
-        <td>{{x.id}}</td>
-        <td>{{x.fruta}}</td>
-        <td><a href="sacar/{{ x.id }}">sacar</a></td>
-      </tr>
-      {% endfor %}
-    </table>
-    <p><a href="suma_fruta/">Agregar</a></p>
-    <button onclick="myFunction()">Click me!</button>
+    <div class="imagen">
+       <div class="uno"> 
+        <p>aló</p>
+       </div>
+       <div class="dos">
+        <img src="{% static '/members/imgs/dos.jpg' %}">
+      </div>
+       <div class="tres">
+        <p>ciao</p>
+      </div>
+    </div>
+
+    <div class="tabla">
+      <table>
+        {% for x in fruta %}
+        <tr>
+          <td>{{x.id}}</td>
+          <td>{{x.fruta}}</td>
+          <td><a href="sacar/{{ x.id }}">sacar</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="fin">
+      <p><a href="suma_fruta/">Agregar</a></p>
+      <button onclick="myFunction()">Click me!</button>
+    </div>
     <script src="{% static 'myfirst.js' %}"></script>
   </body>
 </html>

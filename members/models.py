@@ -2,7 +2,7 @@ from django.db import models
 
 # esto es para crear la tabla en la base de datos
 class Members(models.Model):
-  nombre = models.CharField(max_length=255)
+  nombre = models.CharField(max_length=255, verbose_name= 'Nooombre')
   apellido = models.CharField(max_length=255)
   
 class Frutas(models.Model):
