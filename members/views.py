@@ -110,5 +110,12 @@ def sacar(request, id):
   fruta.delete()
   return HttpResponseRedirect(reverse('frutas'))
 
+def testing(request):
+  mydata = Members.objects.all()
+  template = loader.get_template('testing.html')
+  context= {
+    'mymembers': mydata
+  }
+  return HttpResponse(template.render(context, request))
 
   

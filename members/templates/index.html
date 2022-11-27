@@ -1,30 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Aló</title>
 </head>
-<body style="background-color: orange ">
-
-    <h1>Members</h1>
-
-    <table border="1" style = 'background-color: white' >
-    {% for x in mymembers %}
-    <tr>
-    <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
-    <td>{{ x.nombre }}</td>
-    <td>{{ x.apellido }}</td>
-    <td><a href="delete/{{ x.id }}">eliminar</a></td>
-    </tr>
-    {% endfor %} <!--realizar lógica de programación en templates, como ejecutar sentencias and loops. if for se llaman 
-        "etiquetas de plantilla" en Django. Para ejecutar las etiquetas, las rodeamos entre { 1 % 1 % 1}.-->
-    </table>
-    <p><a href="add/">Agregar</a></p>
-    <p><a href="saludar/">Saludar</a></p>
-    <p><a href="saludar/saludando/">Saludar a todos</a></p>
-    <p><a href="saludar/autoescape/">autoescapar</a></p>
-    <p><a href="saludar/verbatim/">qué pasa con la verba?</a></p>
-    <p><a href="frutas/">dame fruta</a></p>
+<body >    
+    <div class="imagen">
+        <h1>Members</h1>
+        <img src="{% static 'imgs/libros.png' %}" alt="">
+    </div>
+    <div class="tabla">
+        <table >
+            {% for x in mymembers %}
+            <tr>
+            <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+            <td>{{ x.nombre }}</td>
+            <td>{{ x.apellido }}</td>
+            <td><a href="delete/{{ x.id }}">eliminar</a></td>
+            </tr>
+            {% endfor %} <!--realizar lógica de programación en templates, como ejecutar sentencias and loops. if for se llaman 
+                "etiquetas de plantilla" en Django. Para ejecutar las etiquetas, las rodeamos entre { 1 % 1 % 1}.-->
+        </table>
+    </div>
+    <div class="links">
+        <ul id="linkes">
+            <li><a href="add/">Agregar</a></li>
+            <li><a href="saludar/">Saludar</a></li>
+            <li><a href="saludar/saludando/">Saludar a todos</a></li>
+            <li><a href="saludar/autoescape/">autoescapar</a></li>
+            <li><a href="saludar/verbatim/">qué pasa con la verba?</a></li>
+            <li><a href="frutas/">dame fruta</a></li>
+        </ul>
+    </div>
   </html>
