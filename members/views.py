@@ -105,12 +105,18 @@ def sacar(request, id):
 
 def testing(request):                             #.all() method to get all the records and fields of the Members model
   #mydata = Members.objects.values_list('nombre')  #The values() method - (Members.objects.all().values())  return each object as a Python dictionary, names and values as key/value pairs:
-  mydata=Members.objects.filter(nombre='rocco').values()                   #he values_list() method allows you to return only the columns that you specify.
+  mydata=Members.objects.filter(nombre='rocco').values()                   #the values_list() method allows you to return only the columns that you specify.
   template = loader.get_template('testing.html')  
   context= {
     'mymembers': mydata
   }
   return HttpResponse(template.render(context, request))
+
+def volver(request):
+  pass
+  return HttpResponseRedirect(reverse('index'))
+  
+
 
 
   

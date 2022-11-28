@@ -9,6 +9,7 @@ urlpatterns = [
     path('update/<int:id>', views.update, name='update'),
     path('update/updaterecord/<int:id>', views.updaterecord, name='updaterecord'),
     path('saludar/', views.saludar, name = 'saludar'),
+    path('saludar/volver/', views.volver, name='volver'),
     path('saludar/saludando/', views.saludando, name = 'saludando'),
     path('saludar/autoescape/', views.autoescape, name = 'autoescapar'),
     path('saludar/verbatim/', views.verbatim, name = 'verbatim'),
@@ -17,5 +18,6 @@ urlpatterns = [
     path('frutas/suma_fruta/', views.suma_fruta, name = 'suma_fruta'),
     path('frutas/suma_fruta/agregar_fruta/', views.agregar_fruta, name = 'agregar_fruta'),   
     path('testing/', views.testing, name = 'testing'),
+    path('testing/volver/', views.volver, name='volver'),
    ]
    
