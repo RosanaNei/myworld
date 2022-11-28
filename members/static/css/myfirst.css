@@ -1,9 +1,96 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html{
+  font-size: 20px;
+  color:indigo;
+}
+
 body {
-    background-color: rgb(75, 113, 125);
+    background-color: rgb(160, 83, 15);
     font-family: verdana;
+    width: 80%;
+    margin:0 auto;
+    display: block;
+    
   }
+
   h1{
     color: rgb(255, 255, 255);
-    font-size: 200%;
+    background-color: rgb(53, 122, 98);
+    padding: 0 3rem;
+    font-size: 5rem;
     font-family:'Courier New', Courier, monospace;
+    margin: 3rem auto;
+    text-align: center;
   }
+
+.imagen{
+  display:grid;
+  grid-template-columns:  1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+  height:auto;
+  margin: 1rem auto;
+  }
+
+.uno{
+  background-color: beige;
+  justify-self: center;
+  font-size: 6rem;
+  font-weight: bold;
+  color:indigo;
+  
+}
+  .dos{    
+    margin:auto;
+    display: block;
+    width: 100%;
+    height: auto; 
+    justify-self: center;     
+  }
+
+  .dos img{
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .tres{
+    background-color: orange;
+    justify-self: center;
+    font-size: 6rem;
+    font-weight: bold;
+    color:indigo;  
+  }
+
+.tabla{
+  background-color: burlywood;  
+  padding: 1rem 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabla table{
+  border-collapse: separate;
+  font-size: 2rem;
+  text-indent: initial;
+  border-spacing: 1rem;  
+}
+
+.fin{
+  background-color: rgb(71, 214, 131);
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+}

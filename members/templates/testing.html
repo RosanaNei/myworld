@@ -1,0 +1,17 @@
+<div class="tabla">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>apellido</th>
+        </tr>            
+        {% for x in mymembers%}
+            <tr>
+                <td> {{ x.id }} </td>
+                <td> {{x.nombre}} </td>
+                <td> {{x.apellido}} </td>
+        {% endfor %}
+            </tr>
+    </table>
+    <button><a href="index.html">Volver</a></button>
+</div>
