@@ -27,12 +27,21 @@ body{
     justify-items: center;
 }
 
-.imagen img{
+#libros{
     width: 20%;
     height: auto;
+    transition: 350ms ease all;
     /*max-width: 10rem;*/
 }
 
+#libros:hover{
+    scale: 1.2;
+}
+
+.libros-grande{
+    width: 100%;
+    height:auto;
+}
 .tabla{
     font-size: 1rem;
     color: rgb(27, 28, 34);
